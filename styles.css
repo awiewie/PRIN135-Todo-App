@@ -1,0 +1,303 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #252525;
+    max-width: 880px;
+    margin: 50px auto;
+    padding: 38px;
+    border: 2px solid #aeb2b6;
+    border-radius: 18px;
+}
+
+h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+#task {
+    margin-bottom: 25px;
+}
+
+.task-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#task-name {
+    flex: 1;
+    min-width: 0;
+}
+
+#task-name,
+#task-hours {
+    height: 64px;
+    padding: 0 17px;
+    border: 2px solid #aeb2b6;
+    border-radius: 11px;
+    background: #f8f9fa;
+    font-size: 18px;
+    outline: none;
+}
+
+#task-hours {
+    width: 130px;
+}
+
+#task-name:focus,
+#task-hours:focus {
+    border-color: #d889a3;
+}
+
+#add-button {
+    height: 64px;
+    padding: 0 30px;
+    border: none;
+    border-radius: 11px;
+    background: #d889a3;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#add-button:hover {
+    background: #c87591;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 28px 0 20px;
+}
+
+.taposNaBa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.taposNaBa button {
+    padding: 7px 17px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    background: transparent;
+    color: #65696d;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.taposNaBa button:hover {
+    color: #c87591;
+}
+
+.taposNaBa button.active,
+.taposNaBa button[aria-pressed="true"] {
+    border-color: #d889a3;
+    color: #c87591;
+}
+
+#mark-all {
+    color: #65696d;
+    font-size: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#mark-all:hover {
+    color: #d889a3;
+}
+
+#task-list {
+    list-style: none;
+    width: 100%;
+}
+
+#task-list li {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 5px;
+    border-bottom: 1px solid #d6d9dc;
+}
+
+#task-list li input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #d889a3;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#task-list li label {
+    flex: 1;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#task-list li.completed label {
+    text-decoration: line-through;
+    color: #92969a;
+}
+
+.difficulty {
+    padding: 5px 13px;
+    border: 2px solid #e7b6c5;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.difficulty.easy {
+    background: #fff4f7;
+    color: #bd718b;
+}
+
+.difficulty.medium {
+    background: #f1f1f3;
+    border-color: #c5c9cd;
+    color: #35383b;
+}
+
+.difficulty.hard {
+    background: #3d4144;
+    border-color: #3d4144;
+    color: #ffffff;
+}
+
+#task-list li button {
+    border: none;
+    background: transparent;
+    color: #777c80;
+    font-size: 23px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+#task-list li button:hover {
+    color: #d889a3;
+}
+
+#task-list li input[type="text"],
+#task-list li input[type="number"] {
+    padding: 10px;
+    border: 2px solid #d889a3;
+    border-radius: 9px;
+    background: #f8f9fa;
+    font-family: inherit;
+    font-size: 17px;
+    outline: none;
+}
+
+#task-list li input[type="text"] {
+    flex: 1;
+    min-width: 0;
+}
+
+#task-list li input[type="number"] {
+    width: 105px;
+}
+
+#tldr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    margin-top: 5px;
+    color: #65696d;
+    font-size: 15px;
+}
+
+#tldr a {
+    color: #c87591;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#tldr a:hover {
+    color: #a95674;
+}
+
+#clear-completed {
+    color: #c87591;
+}
+
+.isntructions {
+    margin-top: 27px;
+    text-align: center;
+    color: #777c80;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 15px;
+        padding: 22px 17px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .task-form {
+        flex-wrap: wrap;
+    }
+
+    #task-name {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    #task-hours {
+        flex: 1;
+    }
+
+    .filter-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .taposNaBa {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .taposNaBa button {
+        font-size: 14px;
+        padding: 7px 10px;
+    }
+
+    #task-list li {
+        gap: 9px;
+    }
+
+    #task-list li label {
+        font-size: 15px;
+    }
+
+    .difficulty {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    #tldr {
+        flex-wrap: wrap;
+        font-size: 13px;
+    }
+}

@@ -1,65 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIN135: Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width-device-width, initial-scale=1.0"/>
-        <title>PRIN135: Todo App</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<body>
+    <h1>Todo List</h1>
 
-    <body>
-        <h1>Todo List</h1>
+    <form id="task">
+        <div class="task-form">
+            <input
+                type="text"
+                id="task-name"
+                name="taskName"
+                placeholder="What needs to be done?"
+                required>
 
-        <form id="task">
-            <div class="task-form">
-             <form id="todo-form">
-                <input
-                    type="text"
-                    id="task-name"
-                    name="taskName"
-                    placeholder="What needs to be done"
-                    required>
+            <input
+                type="number"
+                id="task-hours"
+                name="taskHours"
+                placeholder="0"
+                min="0">
 
-             <form id="todo-hours">
-                <input
-                    type="number"
-                    id="task-hours"
-                    name="taskHours"
-                    placeholder="0"
-                    min="0"
-                    required>
+            <button type="submit" id="add-button">Add</button>
+        </div>
+    </form>
 
-                <button type="submit" id="add-button">Add</button>
-        </form>
-
+    <div class="filter-row">
         <div class="taposNaBa">
-            <button data-filter="all">All</button>
+            <button class="active" data-filter="all">All</button>
             <button data-filter="active">Active</button>
             <button data-filter="completed">Completed</button>
         </div>
 
         <a href="#" id="mark-all">Mark all done</a>
+    </div>
 
-        <ul id="task-list"></ul>
-        
+    <ul id="task-list">
         <li>
-        <input type="checkbox">
-        <label>Reply to emails Easy - 1h</label>
-        <button type="button">x</button>
+            <input type="checkbox">
+            <label>Reply to emails</label>
+            <span class="difficulty easy">Easy · 1h</span>
+            <button type="button">×</button>
         </li>
+    </ul>
 
-        <div id="tldr">
-            <span id="remaining">0 items left</span>
-            <span id="hours-total">0 hours total</span>
-            <a href="#" id="mark-all">Clear Completed</a>
-        </div>
+    <div id="tldr">
+        <span id="remaining">0 items left</span>
+        <span id="hours-total">0 hours total</span>
+        <a href="#" id="clear-completed">Clear completed</a>
+    </div>
 
-        <p class="isntructions">
+    <p class="isntructions">
         Easy: up to 2h | Medium: over 2h | Hard: over 5h.
         <br>
         Double-click a task or its label to edit the text or hours.
         Press Enter to save, Esc to cancel.
-        </p>
-    </body>
+    </p>
+</body>
 </html>
