@@ -68,42 +68,41 @@ h1 {
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 #add-button:hover {
     background: #c87591;
 }
 
-.filter-row {
+.toolbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin: 28px 0 20px;
 }
 
-.taposNaBa {
+.filters {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.taposNaBa button {
+.filters button {
     padding: 7px 17px;
     border: 2px solid transparent;
     border-radius: 25px;
     background: transparent;
     color: #65696d;
-    font-size: 17px;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
-.taposNaBa button:hover {
+.filters button:hover {
     color: #c87591;
 }
 
-.taposNaBa button.active,
-.taposNaBa button[aria-pressed="true"] {
+.filters button.filter-active {
     border-color: #d889a3;
     color: #c87591;
 }
@@ -232,10 +231,6 @@ h1 {
     color: #a95674;
 }
 
-#clear-completed {
-    color: #c87591;
-}
-
 .isntructions {
     margin-top: 27px;
     text-align: center;
@@ -267,18 +262,18 @@ h1 {
         flex: 1;
     }
 
-    .filter-row {
+    .toolbar {
         align-items: flex-start;
         flex-direction: column;
         gap: 15px;
     }
 
-    .taposNaBa {
+    .filters {
         gap: 5px;
         flex-wrap: wrap;
     }
 
-    .taposNaBa button {
+    .filters button {
         font-size: 14px;
         padding: 7px 10px;
     }
